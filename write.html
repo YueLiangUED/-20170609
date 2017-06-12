@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />  
+    <meta name="apple-mobile-web-status-bar-style" content="black" />
+    <meta name="format-detecition" content="telephone=no" /> 
+    <meta content="email=no" name="format-detection" />
+    <title>用户信息填写</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="css/write.css">
+</head>
+<body>
+<!--已选号码-->
+<div class="header">
+    <span>已选号码</span>
+    <p>15711277221</p>
+</div>
+<!--套餐信息-->
+<div class="tcMessage content">
+    <div class="clear">
+        <span></span>
+        <p>
+            套餐信息<a>(<i>*</i>为必填项)</a>
+        </p>
+    </div>
+    <div class="line"><hr></div>
+    <div class="selectTc info">
+        <p>
+            <i>*</i>选择套餐
+        </p>
+        <input id="selectedTc" type="text" placeholder="请选择套餐" onfocus="this.blur()">
+        <em></em>
+    </div>
+    <div class="line"><hr></div>
+    <div class="liuliang info">
+        <p>
+            <i>*</i>任我看流量包
+        </p>
+        <input id="selectedLiuliang" type="text" placeholder="请选择视频流量包" onfocus="this.blur()">
+        <em></em>
+    </div>
+    <div class="line"><hr></div>
+    <div class="youhui info">
+        <p>
+            <i>*</i>优惠信息
+        </p>
+        <input id="yhinput" type="text" placeholder="请选择优惠信息" onfocus="this.blur()">
+        <em></em>
+    </div>
+</div>
+<!--入网信息-->
+<div class="network content">
+    <div class="clear">
+        <span></span>
+        <p>
+            入网信息<a>(<i>*</i>为必填项)</a><em>&nbsp;&nbsp;根据国家实名制要求，请准确提供身份证信息</em>
+        </p>
+    </div>
+    <div class="line"><hr></div>
+    <div class="name info">
+        <p>
+            <i>*</i>办卡人姓名
+        </p>
+        <input type="text" placeholder="姓名">
+    </div>
+    <div class="line"><hr></div>
+    <div class="IDcard info">
+        <p>
+            <i>*</i>身份证号码
+        </p>
+        <input type="text" placeholder="办卡人身份证号码">
+    </div>
+</div>
+<!--选择学校-->
+<div class="imp toSchool content">
+    <div class="school info">
+        <p>
+            <i>*</i>所在学校：
+        </p>
+    </div>
+    <div class="line"><hr></div>
+    <div class="schoolDesc info">
+        <p>
+            <i>*</i>所在校区：
+        </p>
+    </div>
+    <input id="selectSchool" type="text" placeholder="请填写您所在的学校">
+    <i></i>
+    <input id="selectSchoolDesc" type="text" placeholder="请选择您所在的校区" readonly onfocus="this.blur()">
+    <div class="queryList">
+        <ul>
+            <li>北京大学</li>
+            <li>北京大学</li>
+        </ul>
+    </div>
+</div>
+<div class="dispatching content">
+    <div class="clear">
+        <span></span>
+        <p>
+            配送信息<a>(<i>*</i>为必填项)</a>
+        </p>
+    </div>
+    <div class="line"><hr></div>
+    <div id="home" class="active">配送到家</div>
+    <div id="school">到校自取</div>
+</div>
+<!--配送到家-->
+<div class="toHome content">
+    <div class="name info">
+        <p>
+            <i>*</i>
+            收货人姓名
+        </p>
+        <input type="text" placeholder="姓名">
+    </div>
+    <div class="line"><hr></div>
+    <div class="phone info">
+        <p>
+            <i>*</i>
+            联系电话
+        </p>
+        <input type="text" placeholder="电话">
+    </div>
+    <div class="line"><hr></div>
+    <div class="posttalCode info">
+        <p>
+            <i>*</i>邮政编码
+        </p>
+        <input type="text" placeholder="请输入邮政编码">
+    </div>
+    <div class="line"><hr></div>
+    <div class="address info">
+        <p>
+            <i>*</i>
+            收货地址
+        </p>
+        <input id="selectCity" type="text" placeholder="请选择" onfocus="this.blur()" readonly>
+        <em></em>
+    </div>
+    <div class="line" style="border-bottom: 0.05remsolid #999;"><hr></div>
+    <input class="detailAdd" type="text" placeholder="请填写详细地址，不少于5个字">
+</div>
+<!--到校自取-->
+<div id="toSchool" class="toSchool content" style="margin-top: 0rem; height: 15rem;">
+    <div class="writeOver">
+        <div class="line"><hr></div>
+        <p style="margin-left: 0; font-size: 1.4rem; color:#333333;"><span>领取时间：</span><span>2017年8月20日————2017年9月30日</span></p>
+        <p style="margin-left: 0; font-size: 1.4rem; color:#333333;"><span>领取地址：</span><span>北京大学营业厅-北京市海淀区学院路XX号</span></p>
+        <p style="margin-left: 0; font-size: 1.4rem; color:#333333;"><span>联系电话：</span><span>15756488997</span></p>
+    </div>
+</div>
+
+<!--选择学校-->
+<div id="school-list" class="city-list school-list">
+    <div id="school-list-title" class="city-list-title">
+        <p>取消</p>
+        <p>完成</p>
+    </div>
+    <!-- swiper -->
+    <div id="sch" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学西校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+            <div class="swiper-slide"><p>北京师范大学东校区</p></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div class="reminder content">
+    <p>
+        <span>温馨提示:</span>
+        签收时请务必本人签收并准备好身份证
+    </p>
+</div>
+<div class="price content">
+    <div class="clear">
+        <span></span>
+        <p>
+            商品金额
+        </p>
+        <p class="money">
+            ¥200
+        </p>
+    </div>
+    <div class="line">
+        <hr>
+    </div>
+    <div class="expense info">
+        <p>运费</p>
+        <p>¥0</p>
+    </div>
+    <div class="line">
+        <hr>
+    </div>
+    <div class="total info">
+        <p>
+            合计:
+            <i>¥200</i>
+        </p>
+    </div>
+</div>
+<div class="footer">
+    <div>
+        <input type="checkbox" id="myCheck" checked value="1">
+        <label for="myCheck"></label>
+        我已阅读并同意<a>《北京移动选号入网协议》</a>
+    </div>
+    <div class="button">
+
+    </div>
+</div>
+<!--选择城市-->
+<div class="city-list">
+    <div class="city-list-title">
+        <p>取消</p>
+        <p>完成</p>
+    </div>
+    <!-- swiper -->
+    <div id="add" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><p>北京市</p></div>
+            <div class="swiper-slide"><p>河北省</p></div>
+            <div class="swiper-slide"><p>天津市</p></div>
+            <div class="swiper-slide"><p>吉林省</p></div>
+            <div class="swiper-slide"><p>辽宁省</p></div>
+            <div class="swiper-slide"><p>河北省</p></div>
+            <div class="swiper-slide"><p>山西省</p></div>
+            <div class="swiper-slide"><p>青海省</p></div>
+            <div class="swiper-slide"><p>山东省</p></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<!--遮罩层-->
+<div id="mask" class="mask"></div>
+<!--套餐弹窗-->
+<div id="modal-tc" class="modal2 none">
+    <div class="modal-title">
+        2017和4G爱@U卡
+    </div>
+    <div class="modal-wrap">
+        <div class="modal-btn-group">
+            <!-- 每一个modal-btn是一种卡种 要加卡就添加dom .modal-->
+            <div id="pack18" class="modal-btn act">
+                <div class="simcard"></div>
+                <p class="simcardname">18元档</p>
+            </div>
+            <!-- 每一个modal-btn是一种卡种 -->
+            <div class="modal-btn">
+                <div class="simcard"></div>
+                <p class="simcardname">48元档</p>
+            </div>
+        </div>
+        <div id="packEnter">确认选择</div>
+        <!-- 提示用户的信息 -->
+        <div class="modal-content">
+            <h4>【资费详情】</h4>
+            <div class="zf-details">
+                <img class="zf-pic" src="images/zf_pic.png"/>
+            </div>
+            <h4>【温馨提示】</h4>
+            <div class="wx-tip">
+                <p>1. 卡内包含的数据流量为2G/3G/4G通用流量，卡中所指国内漫游、国内长途、短信、国内数据流量等均不含港澳台。</p>
+                <p>2. 本卡仅可在2017和4G爱@U卡18元档与48元档之间变更档位。“2017和4G爱@U卡”系统品牌设定为动感地带，客户次月起可以选择变更档位，用户转为其他套餐，转出后不可再转回“2017和4G爱@U卡”。其他号卡客户不可转为“2017和4G爱@U卡”。</p>
+                <p>3. 2017和4G爱@U卡激活当月资源和月费按日折扣，次月起全月计费。</p>
+                <p>4. 2017和4G爱@U卡包含的短信、流量（含定向）、WLAN均为4年有效，从卡激活起算。</p>
+                <p>5. 2017和4G爱@U卡用户可以发短信KTTHEDU到10086开通不限量的CMCC-EDU WLAN流量，并执行校园WLAN流量40G封顶的规则。</p>
+                <p>6. 2017和4G爱@U卡（18元档）的本地流量按1元/1GB计费，不使用不计费，自动叠加，当日有效；漫游流量按2元/500MB计费，不使用不计费，自动叠加，当日有效。优惠限当天有效，未用完部分当日24点清零。</p>
+                <p>7. 2017和4G爱@U卡（18元档）与所有流量叠加产品互斥。</p>
+                <p>8. 2017和4G爱@U卡（48元档）有免费享优酷视频、腾讯视频、PPTV视频特权，用户可以发短信ktdxyk（优酷视频）、ktdxtx（腾讯视频）、ktdxpptv（PPTV）到10086享受4年免费30GB/月视频定向流量的特权办理，不办理无法享受此特权。</p>
+                <p>9. 2017和4G爱@U卡（48元档）套外流量执行0.29元/M，每达到10元可以免费使用至100M，同时每达到60元可以免费使用至1GB，如此阶梯至执行双封顶规则。</p>
+                <p>10. 2017和4G爱@U卡（18元档）的用户不能作为和家庭分享业务和多终端共享的主卡，但可以作为副卡；2017和4G爱@U卡（48元档）的用户可以成为和家庭分享业务和多终端共享的主卡，卡内的流量可以滚存。</p>
+                <p>11. 支持CXYL、CXLL、CXTC等查询服务。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--优惠弹窗-->
+<div class="modal-youhui">
+    <div class="modal-title">
+        优惠活动
+    </div>
+    <div class="yh-wrap">
+        <div class="yh-btns">
+            <div class="yh-btn act"><i class="icon yh_50"></i><span>充50得120</span></div>
+            <!-- <div class="yh-btn btn_200"><i class="icon yh_100"></i><span>充100得200</span></div> -->
+        </div>
+        <div id="yhEnter">确认选择</div>
+    
+    
+    <div class="modal-content yh-content">
+        <div class="txt">
+            <h4>【充50得120特惠活动】</h4>
+            <p>预存50元，您预存的50元话费立即到账，当月立即赠送20元话费，从次月起，每月赠送10元，连续赠送5个月。</p>
+        </div>
+        <!-- <div class="txt">
+            <h4>【充200得220特惠活动】</h4>
+            <p>预存50元，您预存的50元话费立即到账，当月立即赠送20元话费，从次月起，每月赠送10元，连续赠送5个月。</p>
+        </div> -->
+        <div class="txt">
+            <h4>【活动规则】</h4>
+            <p>活动当月开始生效，生效期间每月最低消费18元且不可变更套餐。返还及赠送的话费，不可退、转，不可用于第三方通信账户支付类消费、违约金及代收费。整月停机，扣最低消费，话费正常赠送。承诺期间，若您参加其他有承诺消费限制的促销活动，承诺消费金额将叠加。</p>
+        </div>
+    </div>
+    </div>
+</div>
+<!--流量包弹窗-->
+<div id="modal2" class="modal2 none">
+    <div class="modal-title">
+        任我看超大流量包
+    </div>
+    <div class="modal-wrap">
+        <div class="video-btns">
+            <div class="video-item">
+                <i class="video-icon yk act"></i>
+                <span class="video-name">优酷视频</span>
+            </div>
+            <div class="video-item">
+                <i class="video-icon tx"></i>
+                <span class="video-name">腾讯视频</span>
+            </div>
+            <div class="video-item">
+                <i class="video-icon pptv"></i>
+                <span class="video-name">PPTV</span>
+            </div>
+        </div>
+        <div class="enter2">确认选择</div>
+        <div class="modal-content">
+            <div class="txt">
+                <h4>【任我看业务介绍】</h4>
+                <p>“任我看”是中国移动的视频流量产品，面向视频APP推出优惠流量资费，随时随地畅享指定APP视频。</p>
+            </div>
+            <div class="txt">
+                <h4>【任我看视频流量包业务规则】</h4>
+                <p>1、任我看30GB视频流量包订购成功后立即生效，仅可在国内使用（不含港澳台）。视频流量包每月自动续订。</p>
+                <p>2、视频流量当月清零、不能分享、不能转赠。</p>
+                <p>3、任我看视频流量包每次仅可选择1个视频APP，仅可订购1次。</p>
+            </div>
+            <div class="txt">
+                <h4>【任我看视频流量包使用范围】</h4>
+                <p>中国移动2G/3G/4G网络下，访问指定视频APP中的特定视频内容（其中优酷视频流量包中包含土豆视频内容）。但不包括以下内容：</p>
+                <p>1、客户端启动、登录及客户端内的图片、文字、视频内插播广告、弹幕、第三方广告、主播类视频、在线观看/下载/缓存第三方视频等。</p>
+                <p>2、手机号码处于国际或港澳台地区漫游状态下产生的流量。</p>
+                <p>3、利用手机设置代理服务器或VPN等方式，访问APP所产生的流量。</p>
+                <p>4、用无线上网卡、平板电脑、CPE、MIFI等非手机设备使用产生的流量。</p>
+                <p>5、手机作为热点使用产生的流量。</p>
+                <p>6、使用CMWAP接入点方式，访问视频APP所产生的流量。</p>
+                <p>7、使用优酷视频下载/缓存该网站上的视频所产生的流量。</p>
+                <p>8、使用聚力视频(PPTV)下载该网站上的视频所产生的流量。</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/write.js"></script>
+<script>
+    var mySwiper = new Swiper('#add', {
+        direction : 'vertical',
+        //pagination : '.swiper-pagination',
+        slidesPerView: 5,
+        centeredSlides : true,
+    });
+    var mySwiper = new Swiper('#sch', {
+        direction : 'vertical',
+        //pagination : '.swiper-pagination',
+        slidesPerView: 5,
+        centeredSlides : true,
+    });
+</script>
